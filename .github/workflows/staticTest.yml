@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Bandit Scan
         run: |
@@ -19,7 +19,7 @@ jobs:
           semgrep scan --config auto --text -o semgrepResults.txt || true
 
       - name: Upload Scan Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Results
           path: |
