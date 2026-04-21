@@ -1,0 +1,13 @@
+# target all files for a fully comprehensive test
+targets: 
+    - "."
+
+# performs in depth scan of sub directories as well 
+recursive: true
+
+# capture medium and high vulnerabilities only
+level: "MEDIUM"
+
+# capture only issues it has a confidence 
+# of medium or higher for
+confidence: "MEDIUM"
