@@ -1,4 +1,4 @@
-name: Task E - Supply Chain Audit (SBOM)
+name: Task E - SBOM
 
 on:
   push:
