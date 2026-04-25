@@ -1,29 +1,54 @@
-# Task C: Automated Security Testing
+### Task C Automated Security Testing
 
-For my CI/CD pipeline, I have used Bandit as my static analysis tool. 
+For this static analysis tool CI/CD pipeline, I have used 2 tools. Bandit and Semgrep.
 
-This is because:
-1. Im designing tests in python which bandit is compatible with. 
-2. Bandit generates detailed reports about its findings including the security issues code and a description of what the issue is. As well as a severity and and confidence rating from low to high indicating how much of a problem the security is and how accurately it has been identified.
-3. Bandit can easily be reconfigured and tailored to your needs for the specific project.
-4. Bandit is very easy to integrate into projects making it an excellent tool to begin coding securely.
+This supports a defence in depth testing strategy as both tools provide distinct results to ensure maximum coverage of the system.
+
+In generaly, static analysis tools are great for finding bugs in the code of an application. They are fast to run compared to dynmaic analysis tools, consitent with their findings and can easily be scaled with a project.
+
+However, Static analysis do not have run time awareness of the application.This leads to a low detection of logic flaws, and a high false positive rate due to a lack of context awareness.
+
+I have selected bandit because:
+    It is specifically designed to find security issues in Python code. Which makes it easy to integrate and incorporate into this python - flask web apps.
+    Bandit is east to configure so it can be custom tailored to the exact application you are using.
+    It is open source and easily available to everyone.
+    Bandit uses abstract syntax trees to understand understand the structure of the application which makes it great for analysing complex data structures. Therefore potentially finding more complex issues.
+    Bandit is also easy to run allowing for quick scans that aren't time costly.
 
 However:
-1. Bandit is only a static analysis tool and therefore can't detetct run time issues in the project. This also makes it weaker at finding logic flaws in the application.
-2. Bandit can potentially flag false positives when a security issue doesn't exist. This is because it cannot understand the context of a situation and just recognising patterns that are potentially harmful.
+    Bandit has a high false positive rate for 'secret keys' and often flags anything that slightly resembles a password or secret key as an issue.
+    Bandit has weak taint analysis meaning that if data is passed across multiple functions it can lose track of the data potentially allowing an SQL Injection Vulnerability to pass through.
+    Bandit is also weak at detecting vulnerabilities in code between multiple files. For instance, if a helper function is defined in a seperate file and used elsewhere, when checking the other code, the helper function won't be analysed at the same time potentially leading to an exploitable gap in the security.
+    Bandit also only works with python so will not scan other files that aren't .py in the workspace which may miss potential vulnerabilities.
 
-To test my application:
-I have designed a .bandit config file and a yaml file to run the tests on a git push.
+I have chosen Semgrep because:
+    It is not limited to scanning only python files. this means that it gives a full stack static anaysis scan of the whole application.
+    Semgrep uses pattern matching to try and detect logic errors in the application which provides an alternative method of finding vulnerabilities that is differnt to bandit.
+    Semgrep is much better at taint analysis therefore it pairs well with supporting bandits weaknesses, this makes it strong at uncovering SQL Injection vulenrabilities.
+    Semgrep is easy to customise allowing for an easy integration of rules like exclude ... which helps reduce the amount of false positives in the scan.
 
-The .bandit config file adjusts the report of the bandit scan so that it only reports medium and high level security issues that it is medium to high confidence in. In practice, this will allow more time to be allocated to the more severe issues and help prevent too much time being wasted on flase positive issues or issues that aren't a problem. The bandit scan has been configured to be recursive so it scans all  subdirectories as well for a more in depth scan of the sytem, and it includes all files so that the whole system is scanned. In this case, all files that exist are important to be scanned but in a large scale system, some may be excluded as they will not have security flaws so excluding them can reduce the overall scan time.
+However:
+    semgrep can often be too sensitive leading to a bloat of low severity issues that are actually false positives. This may lead to you missing the low severity issues that are a problem
+    Semgrep also suffers with a lpw detetction rate of inter-file vulerabilities.
+    Semgrep does not natively work with windows which can cause slight issues with compatibility with the tool.
+    Semgrep is not great at analysing complect datastructures unlike bandit. 
 
-The first issue that bandit detected was an SQL Injection (B608).
+Results:
+Bandit detected 18 issues with 1 being low severity, 16 being medium severity and 1 being high severity. The confidence of these issues is 14 with low confidence and 4 with medium confidence.
+Semgrep detected 92 issues with all of them being high severity.
+This suggests that semgreps pattern matching algorithm was more beneficial at detecting the majority of the applications issues. This is further backed up by the fact that the majority of the issues are SQL injection related which Semgrep excells at. However, Bandit was more effective at discovering insecure configurations than Semgrep.
 
-This means that bandit detected that the users input is assumed to be safe with no precautions allowing an input like ' OR 1=1-- for the username which would bypass the username check as True allowing an attacker to gain access to an account.
+Both tools mainly detected potential SQL injection however, Bandit consistently had a much lower confidence level in its findings between low and medium where as Semgrep had high confidence in each of its SQL findings.
 
-The second issue v=bandit detected was a hashing algorithm issue. 
+Both tools detected the weak MD5 hashign algorithm but again Semgrep was more confident in this finding than Bandit.
 
-The MD5 hashing algorithm has been used as opposed to a newer alternative like Bcrypt. This is an issue because MD5 is an outdated hashing algorithm that can easily be cracked using modern techniques like a rainbow table or brute force to crack the hashing algorithm.  
+Due to Bandit being native to python it was able to detect that debug mode is enabled allowing attackers to execute code on the application. This is a high severity issue that Semgrep did not detect.
 
-I have incorporated a false positive issue too. In the getNumber funtion, the random module has been used to retrieve a random number. In context this is not a security issue. However, the python random module can be a security risk as it is not truly random and can be predicted if used in a security context. Therefore, it was falsely reported as an issue.
+Bandit detected a hardcoded secret which woudl ussually be an issue for a real world application however in this case it is fine as the application is only local therefore it can be deduced as a false positive.
+
+Semgrep flagged the same issue multiple times in some cases leading to redundant results that bloat the results wit false positives.
+
+Semgrep was able to detect a cookies security issue as the cookies are sent over HTTP and not HTTPS.
+
+
 
