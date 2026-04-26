@@ -18,6 +18,7 @@ jobs:
           path: "."
           format: "cyclonedx-json"
           output-file: "sbom_source.json"
+          artifact-name: "source-sbom"
 
       - name: Build local container image
         run: docker build -t temp-target:latest .

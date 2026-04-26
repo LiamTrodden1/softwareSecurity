@@ -1,0 +1,407 @@
+{
+    "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.6",
+    "serialNumber": "urn:uuid:4dc2d53e-5ce1-46f8-966c-c6bbcf0b9797",
+    "version": 1,
+    "metadata": {
+        "timestamp": "2026-04-26T03:20:08Z",
+        "tools": {
+            "components": [
+                {
+                    "type": "application",
+                    "author": "anchore",
+                    "name": "syft",
+                    "version": "1.42.3"
+                }
+            ]
+        },
+        "component": {
+            "bom-ref": "af63bd4c8601b7f1",
+            "type": "file",
+            "name": "."
+        }
+    },
+    "components": [
+        {
+            "bom-ref": "pkg:github/actions/checkout@v4?package-id=433d452884e6b065",
+            "type": "library",
+            "name": "actions/checkout",
+            "version": "v4",
+            "cpe": "cpe:2.3:a:actions\\/checkout:actions\\/checkout:v4:*:*:*:*:*:*:*",
+            "purl": "pkg:github/actions/checkout@v4",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "github-actions-usage-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "github-action"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "github-actions-use-statement"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/.github/workflows/SBOM.yml"
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:github/actions/checkout@v4?package-id=70d57ca7f849f4ba",
+            "type": "library",
+            "name": "actions/checkout",
+            "version": "v4",
+            "cpe": "cpe:2.3:a:actions\\/checkout:actions\\/checkout:v4:*:*:*:*:*:*:*",
+            "purl": "pkg:github/actions/checkout@v4",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "github-actions-usage-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "github-action"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "github-actions-use-statement"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/.github/workflows/staticTest.yml"
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:github/actions/upload-artifact@v4?package-id=c4a8a2410dbffb97",
+            "type": "library",
+            "name": "actions/upload-artifact",
+            "version": "v4",
+            "cpe": "cpe:2.3:a:actions\\/upload-artifact:actions\\/upload-artifact:v4:*:*:*:*:*:*:*",
+            "purl": "pkg:github/actions/upload-artifact@v4",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "github-actions-usage-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "github-action"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "github-actions-use-statement"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload-artifact:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload_artifact:actions\\/upload-artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload_artifact:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload:actions\\/upload-artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/.github/workflows/SBOM.yml"
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:github/actions/upload-artifact@v4?package-id=91f3c7d4fb48da1e",
+            "type": "library",
+            "name": "actions/upload-artifact",
+            "version": "v4",
+            "cpe": "cpe:2.3:a:actions\\/upload-artifact:actions\\/upload-artifact:v4:*:*:*:*:*:*:*",
+            "purl": "pkg:github/actions/upload-artifact@v4",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "github-actions-usage-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "github-action"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "github-actions-use-statement"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload-artifact:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload_artifact:actions\\/upload-artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload_artifact:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload:actions\\/upload-artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:actions\\/upload:actions\\/upload_artifact:v4:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/.github/workflows/staticTest.yml"
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:github/anchore/sbom-action@v0?package-id=7ab1ec513f1265ca",
+            "type": "library",
+            "name": "anchore/sbom-action",
+            "version": "v0",
+            "cpe": "cpe:2.3:a:anchore\\/sbom-action:anchore\\/sbom-action:v0:*:*:*:*:*:*:*",
+            "purl": "pkg:github/anchore/sbom-action@v0",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "github-actions-usage-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "github-action"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "github-actions-use-statement"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:anchore\\/sbom-action:anchore\\/sbom_action:v0:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:anchore\\/sbom_action:anchore\\/sbom-action:v0:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:anchore\\/sbom_action:anchore\\/sbom_action:v0:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:anchore\\/sbom:anchore\\/sbom-action:v0:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:anchore\\/sbom:anchore\\/sbom_action:v0:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/.github/workflows/SBOM.yml"
+                }
+            ]
+        },
+        {
+            "bom-ref": "82bb3d3f189126f5",
+            "type": "application",
+            "name": "bufferOverflow",
+            "version": "UNKNOWN",
+            "cpe": "cpe:2.3:a:bufferOverflow:bufferOverflow:*:*:*:*:*:*:*:*",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "pe-binary-package-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "binary"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "pe-binary"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/TaskA/bufferOverflow.exe"
+                }
+            ]
+        },
+        {
+            "bom-ref": "3e82600e21cfdd9d",
+            "type": "application",
+            "name": "bufferOverflowFix",
+            "version": "UNKNOWN",
+            "cpe": "cpe:2.3:a:bufferOverflowFix:bufferOverflowFix:*:*:*:*:*:*:*:*",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "pe-binary-package-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "binary"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "pe-binary"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/TaskA/bufferOverflowFix.exe"
+                }
+            ]
+        },
+        {
+            "bom-ref": "ee58fecc8680b900",
+            "type": "application",
+            "name": "useAfterFree",
+            "version": "UNKNOWN",
+            "cpe": "cpe:2.3:a:useAfterFree:useAfterFree:*:*:*:*:*:*:*:*",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "pe-binary-package-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "binary"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "pe-binary"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/TaskA/useAfterFree.exe"
+                }
+            ]
+        },
+        {
+            "bom-ref": "40aa040652de80b8",
+            "type": "application",
+            "name": "useAfterFreeFix",
+            "version": "UNKNOWN",
+            "cpe": "cpe:2.3:a:useAfterFreeFix:useAfterFreeFix:*:*:*:*:*:*:*:*",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "pe-binary-package-cataloger"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "binary"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "pe-binary"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "/TaskA/useAfterFreeFix.exe"
+                }
+            ]
+        },
+        {
+            "bom-ref": "08e6aa58477827c9",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/.github/workflows/SBOM.yml",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "1a9b93b73cddbbc71d1569ebb217e6f7195d783f"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "f593c6c639f2c552a7501f8fd5f9cbcd885563ece24a27d3a9a7f6f8499e565d"
+                }
+            ]
+        },
+        {
+            "bom-ref": "6f7820539b2dc7fa",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/.github/workflows/staticTest.yml",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "67826f79adc555fb817f3abbd318ab5c7543e326"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "c36a39929fe9f5019d26a718b5811f1d7fb23a4b2140cbbb7044ead15206af9f"
+                }
+            ]
+        },
+        {
+            "bom-ref": "1e73074526614cef",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/TaskA/bufferOverflow.exe",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "5329c917006af736e5b1ad30959feea2d6f36ac2"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "147d2f2e540ebe392f41393431b8953d1a5e33207a5f66b1ca5da13bab2834b9"
+                }
+            ]
+        },
+        {
+            "bom-ref": "dd32583457742f45",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/TaskA/bufferOverflowFix.exe",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "ee20a5037fa2c47086325fffc334278d13ecfc98"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "9713cfd2a860364b7097c3580dbd25b7bcad4c82776759661eb60c86627e7fc1"
+                }
+            ]
+        },
+        {
+            "bom-ref": "dd701d8786cd744e",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/TaskA/useAfterFree.exe",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "c3d67853b82a81ba5b3ff6863d59a17f3e9b4a87"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "aa641c280c063f4161cb6b130b956bc86167cf524e4e19c903d09a328b440d85"
+                }
+            ]
+        },
+        {
+            "bom-ref": "a80227e030a3c72b",
+            "type": "file",
+            "name": "/home/runner/work/softwareSecurity/softwareSecurity/TaskA/useAfterFreeFix.exe",
+            "hashes": [
+                {
+                    "alg": "SHA-1",
+                    "content": "0b95a2a061c3ceeeea8c1b5e453de829fc43f083"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "c46663fcbaa92efe83075af3f541ea51135ff07ba91170b5753d9685c906b99b"
+                }
+            ]
+        }
+    ]
+}
