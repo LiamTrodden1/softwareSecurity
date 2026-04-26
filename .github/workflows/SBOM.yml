@@ -13,12 +13,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build local container image
-        run: docker build -t temp-target:latest .
+        run: |
+          docker build -t temp-target:latest .
+          docker images # This confirms the image exists in the logs
+
 
       - name: Run Anchore Syft
         uses: anchore/sbom-action@v0
         with:
           image: "temp-target:latest"
+          dockerfile: "Dockerfile"
+          path: "."
           format: "cyclonedx-json"
           output-file: "sbom.json"
 
